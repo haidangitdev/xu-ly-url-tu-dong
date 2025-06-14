@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Nếu file hoặc thư mục tồn tại thì không rewrite
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Gửi mọi request không trùng file, thư mục về index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
